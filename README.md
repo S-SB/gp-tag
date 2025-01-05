@@ -1,4 +1,4 @@
-![GP-Tag Overview](docs/images/social-preview-core.png)
+![GP-Tag Overview](docs/images/core.png)
 # GP-Tag (Global Positioning Tag)
 
 GP-Tag is a novel fiducial marker system that encodes global position data (latitude, longitude, altitude) along with orientation information directly within the marker pattern. This system enables robots and autonomous systems to determine both their global position and relative pose from a single marker detection.
