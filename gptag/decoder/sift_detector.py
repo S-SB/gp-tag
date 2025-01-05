@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
 
 from annuli_decoder import decode_annuli_rotation
-from decoder.data_decoder import decode_data
+from data_decoder import decode_data
 from spike_detector import SpikeDetector
 from finder_decoder import FinderDecoder
 
@@ -119,9 +119,10 @@ class SIFTDetector6DoF:
             gray = image.copy()
 
         # Load template
-        template = cv2.imread("tag3_blank_360.png", cv2.IMREAD_GRAYSCALE)
+        template_path = Path(__file__).parent / "tag3_blank_360.png"
+        template = cv2.imread(str(template_path), cv2.IMREAD_GRAYSCALE)
         if template is None:
-            raise ValueError("Could not load template image")
+            raise ValueError(f"Could not load template image at {template_path}")
 
         # Initial SIFT detection
         sift_start = time.time()
